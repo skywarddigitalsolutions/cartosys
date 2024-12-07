@@ -90,7 +90,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-blanco hover:bg-[#4A7856] hover:text-blanco block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300"
+                  className="text-blanco hover:bg-verdeoscuro hover:text-blanco block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

@@ -103,7 +103,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-[#4A7856] pt-8">
+        <div className="mt-12 border-t border-verdeoscuro pt-8">
           <p className="text-base text-blanco xl:text-center">
             &copy; 2024 Cartosys. Todos los derechos reservados.
           </p>

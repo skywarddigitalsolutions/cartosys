@@ -1,4 +1,4 @@
-import Contacto from "./components/Contacto";
+import Contacto from "./components/contacto";
 import Footer from "./components/footer";
 import Hero from "./components/hero";
 import Navbar from "./components/NavBar";

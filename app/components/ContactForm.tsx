@@ -4,11 +4,10 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "@/components/ui/use-toast"
+import { Button } from "./ui/button"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
+import { Input } from "./ui/input"
+import { Textarea } from "./ui/textarea"
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -24,6 +23,7 @@ const formSchema = z.object({
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -36,8 +36,9 @@ export function ContactForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
+    setSubmitStatus('idle')
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,20 +47,13 @@ export function ContactForm() {
       })
 
       if (response.ok) {
-        toast({
-          title: "Mensaje enviado",
-          description: "Gracias por contactarnos. Te responderemos pronto.",
-        })
+        setSubmitStatus('success')
         form.reset()
       } else {
-        throw new Error('Error al enviar el mensaje')
+        throw new Error('Error al enviar el formulario')
       }
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo.",
-        variant: "destructive",
-      })
+      setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
     }
@@ -110,6 +104,12 @@ export function ContactForm() {
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Enviando..." : "Enviar mensaje"}
         </Button>
+        {submitStatus === 'success' && (
+          <p className="text-green-500">Mensaje enviado con éxito. Gracias por contactarnos.</p>
+        )}
+        {submitStatus === 'error' && (
+          <p className="text-red-500">Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo.</p>
+        )}
       </form>
     </Form>
   )

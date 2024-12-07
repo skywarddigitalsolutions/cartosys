@@ -54,7 +54,7 @@ export default function Servicios() {
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <div key={index} className="bg-[#4A7856] rounded-lg shadow-lg p-6 transition-transform duration-300 hover:scale-105">
+            <div key={index} className="bg-verdeoscuro rounded-lg shadow-lg p-6 transition-transform duration-300 hover:scale-105">
               <div className="flex items-center justify-center w-16 h-16 mx-auto bg-negro rounded-full">
                 {service.icon}
               </div>

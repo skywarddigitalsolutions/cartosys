@@ -1,4 +1,4 @@
-import { ContactForm } from './Contacto'
+import { ContactForm } from './ContactForm'
 import { Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Contacto() {
