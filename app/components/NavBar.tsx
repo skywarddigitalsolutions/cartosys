@@ -44,7 +44,7 @@ export default function Navbar() {
     <nav className={`fixed w-full z-50 transition-transform duration-300 ${show ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="bg-negro bg-opacity-90 backdrop-blur-md shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-24 lg:h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
                 <span className="text-verde text-2xl font-bold tracking-wider">CartoSYS</span>

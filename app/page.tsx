@@ -1,3 +1,4 @@
+import Contacto from "./components/Contacto";
 import Footer from "./components/footer";
 import Hero from "./components/hero";
 import Navbar from "./components/NavBar";
@@ -13,6 +14,7 @@ export default function Home() {
       <Servicios />
       <Objetivos />
       <Nosotros />
+      <Contacto />
       <Footer />
     </>
   );
