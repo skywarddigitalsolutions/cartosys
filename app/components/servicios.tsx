@@ -40,7 +40,7 @@ const services = [
 
 export default function Servicios() {
   return (
-    <section className="py-16 bg-negro text-blanco">
+    <section className="py-16 bg-negro text-blanco" id="servicios">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-verde sm:text-4xl">

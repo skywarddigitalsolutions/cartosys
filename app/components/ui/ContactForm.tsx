@@ -4,10 +4,10 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { Button } from "./ui/button"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
-import { Input } from "./ui/input"
-import { Textarea } from "./ui/textarea"
+import { Button } from "./button"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./form"
+import { Input } from "./input"
+import { Textarea } from "./textarea"
 
 const formSchema = z.object({
   name: z.string().min(2, {

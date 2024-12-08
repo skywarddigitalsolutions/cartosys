@@ -57,28 +57,29 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
-                <h3 className="text-sm font-semibold text-verde tracking-wider uppercase">Empresa</h3>
+                <h3 className="text-sm font-semibold text-verde tracking-wider uppercase">Menú</h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  <li>
+                   <li>
                     <Link href="#" className="text-base text-blanco hover:text-verde">
-                      Sobre nosotros
+                      Inico
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-base text-blanco hover:text-verde">
-                      Equipo
+                    <Link href="#servicios" className="text-base text-blanco hover:text-verde">
+                      Servicios
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-base text-blanco hover:text-verde">
-                      Proyectos
+                    <Link href="#objetivos" className="text-base text-blanco hover:text-verde">
+                      Objetivos
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-base text-blanco hover:text-verde">
-                      Contacto
+                    <Link href="#nosotros" className="text-base text-blanco hover:text-verde">
+                      Nosotros
                     </Link>
                   </li>
+                  
                 </ul>
               </div>
             </div>

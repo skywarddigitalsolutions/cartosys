@@ -26,7 +26,7 @@ const features = [
 
 export default function Objetivos() {
   return (
-    <section id="nosotros" className="py-24 bg-negro text-blanco">
+    <section id="objetivos" className="py-24 bg-negro text-blanco">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center mb-16">
