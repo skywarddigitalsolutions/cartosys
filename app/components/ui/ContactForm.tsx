@@ -53,7 +53,8 @@ export function ContactForm() {
         throw new Error('Error al enviar el formulario')
       }
     } catch (error) {
-      setSubmitStatus('error')
+      console.log("Error:", error);
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false)
     }

@@ -13,9 +13,10 @@ const navItems = [
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true)
-  const [isOpen, setIsOpen] = useState(false)
-  const [prevScrollPos, setPrevScrollPos] = useState(0)
+const [isOpen, setIsOpen] = useState(false)
+const [prevScrollPos, setPrevScrollPos] = useState(0)
 
+useEffect(() => {
   const controlNavbar = () => {
     const currentScrollPos = window.scrollY
     const isScrollingUp = prevScrollPos > currentScrollPos
@@ -24,10 +25,9 @@ export default function Navbar() {
     setPrevScrollPos(currentScrollPos)
   }
 
-  useEffect(() => {
-    window.addEventListener('scroll', controlNavbar)
-    return () => window.removeEventListener('scroll', controlNavbar)
-  }, [prevScrollPos])
+  window.addEventListener('scroll', controlNavbar)
+  return () => window.removeEventListener('scroll', controlNavbar)
+}, [prevScrollPos])
 
   return (
     <nav className={`fixed w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
