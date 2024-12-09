@@ -1,49 +1,37 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 
 const navItems = [
   { name: 'Inicio', href: '/' },
   { name: 'Servicios', href: '#servicios' },
-  { name: 'Objetivos', href: '#objetivos' },
   { name: 'Nosotros', href: '#nosotros' },
+  { name: 'Equipo', href: '#equipo' },
   { name: 'Contacto', href: '#contacto' },
 ]
 
 export default function Navbar() {
+  const [isVisible, setIsVisible] = useState(true)
   const [isOpen, setIsOpen] = useState(false)
-  const [isClient, setIsClient] = useState(false)
-  const showRef = useRef(true)
-  const lastScrollYRef = useRef(0)
+  const [prevScrollPos, setPrevScrollPos] = useState(0)
 
   const controlNavbar = () => {
-    if (typeof window !== 'undefined') {
-      if (window.scrollY > lastScrollYRef.current) {
-        showRef.current = false
-      } else {
-        showRef.current = true
-      }
-      lastScrollYRef.current = window.scrollY
-      setIsClient(true) // Forzar re-render
-    }
+    const currentScrollPos = window.scrollY
+    const isScrollingUp = prevScrollPos > currentScrollPos
+
+    setIsVisible(isScrollingUp || currentScrollPos < 10)
+    setPrevScrollPos(currentScrollPos)
   }
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlNavbar)
-      setIsClient(true) // Establecer isClient a true después del montaje
-
-      // cleanup function
-      return () => {
-        window.removeEventListener('scroll', controlNavbar)
-      }
-    }
-  }, [])
+    window.addEventListener('scroll', controlNavbar)
+    return () => window.removeEventListener('scroll', controlNavbar)
+  }, [prevScrollPos])
 
   return (
-    <nav className={`fixed w-full z-50 transition-transform duration-300 ${isClient && showRef.current ? 'translate-y-0' : '-translate-y-full'}`}>
+    <nav className={`fixed w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="bg-[#272727] bg-opacity-90 backdrop-blur-md shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">

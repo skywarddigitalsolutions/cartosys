@@ -55,8 +55,9 @@ export default function Objetivos() {
           </dl>
         </div>
 
-        <div className="mt-20 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-          <div className="relative">
+
+        <div className="mt-20 lg:mt-24 flex flex-col lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+          <div className="order-2 lg:order-1">
             <h3 className="text-2xl font-extrabold text-blanco tracking-tight sm:text-3xl">
               Nuestra Misión
             </h3>
@@ -79,7 +80,7 @@ export default function Objetivos() {
             </dl>
           </div>
 
-          <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+          <div className="order-1 lg:order-2 mb-8 lg:mb-0">
             <Image
               className="relative mx-auto rounded-lg shadow-lg"
               src="/fotoprueba2.webp"
@@ -89,6 +90,7 @@ export default function Objetivos() {
             />
           </div>
         </div>
+
 
         <div className="mt-20 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div className="relative order-2 lg:order-1">
@@ -101,7 +103,7 @@ export default function Objetivos() {
             />
           </div>
 
-          <div className="relative order-1 lg:order-2">
+          <div className="relative order-1 lg:order-2 mt-8 lg:mt-0">
             <h3 className="text-2xl font-extrabold text-blanco tracking-tight sm:text-3xl">
               Nuestra Visión
             </h3>

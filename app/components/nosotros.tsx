@@ -7,7 +7,7 @@ const teamMembers = [
   {
     name: "Horacio Belloni",
     title: "Agrimensor especializado en SIG",
-    image: "/persona.jpg",
+    image: "/horaciobelloni.jpg",
     description: "Agrimensor especializado en Sistemas de Información geográfica y procesamiento de imágenes aplicadas a la gestión de datos del territorio. Experto en procesos de tasaciones y expropiación de inmuebles.",
     achievements: [
       "Maestría en gestión del ambiente, el patrimonio y el paisaje y socio ambiental",
@@ -21,7 +21,7 @@ const teamMembers = [
   {
     name: "Omar Marcelo Belloni",
     title: "Ingeniero en Sistemas de Información",
-    image: "/persona.jpg",
+    image: "/omarbelloni.jpg",
     description: "Ingeniero en Sistemas de Información con una sólida trayectoria en la gestión integral de servicios de TI. Especializado en alinear tecnología, operaciones y negocio para impulsar la innovación y la eficiencia.",
     achievements: [
       "Dos maestrías en áreas relacionadas con sistemas de información",
@@ -52,7 +52,7 @@ export default function Nosotros() {
             <Card key={member.name} className="bg-negro text-blanco overflow-hidden">
               <CardContent className="p-0">
                 <div className={`flex flex-col lg:flex-row ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
-                  <div className="lg:w-1/2">
+                  <div className="lg:w-1/3">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -61,7 +61,7 @@ export default function Nosotros() {
                       className="w-full h-64 lg:h-full object-cover"
                     />
                   </div>
-                  <div className="lg:w-1/2 p-6 lg:p-8">
+                  <div className="lg:w-2/3 p-6 lg:p-8">
                     <h3 className="text-2xl font-bold text-verde mb-2">{member.name}</h3>
                     <p className="text-lg font-semibold mb-4">{member.title}</p>
                     <p className="mb-4">{member.description}</p>

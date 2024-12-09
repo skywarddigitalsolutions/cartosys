@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   title: "Carto Sys - Cartografía",
   description: "Diseño y Gestión de Moda",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/fotoprueba.webp",
+    shortcut: "/fotoprueba.webp",
+    apple: "/fotoprueba.webp",
   },
 };
 const inter = Inter({ subsets: ["latin"] });
@@ -26,7 +26,7 @@ export default function RootLayout({
             <meta property="og:type" content="website" />
             <meta property="og:locale" content="es_ES" />
             <link rel="canonical" href="https://sds.com.ar" />
-            <link rel="icon" href="/favicon.png" />
+            <link rel="icon" href="/fotoprueba.webp" />
           </head>
             <body className={inter.className}>{children}</body>
     </html>
