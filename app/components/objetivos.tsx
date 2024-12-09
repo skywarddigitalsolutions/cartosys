@@ -96,7 +96,7 @@ export default function Objetivos() {
           <div className="relative order-2 lg:order-1">
             <Image
               className="relative mx-auto rounded-lg shadow-lg"
-              src="/fotoprueba2.webp"
+              src="/vision.jpg"
               alt="Equipo trabajando"
               width={500}
               height={500}
