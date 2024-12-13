@@ -24,9 +24,9 @@ const features = [
   },
 ]
 
-export default function Objetivos() {
+export default function   Objetivos() {
   return (
-    <section id="objetivos" className="py-24 bg-negro text-blanco">
+    <section id="objetivos" className="py-24 bg-bordofondo text-blanco">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center mb-16">
@@ -44,7 +44,7 @@ export default function Objetivos() {
             {features.map((feature) => (
               <div key={feature.name} className="relative">
                 <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-verdeoscuro text-blanco">
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-bordoclaro text-verde">
                     <feature.icon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-verde">{feature.name}</p>
@@ -68,7 +68,7 @@ export default function Objetivos() {
             <dl className="mt-10 space-y-10">
               <div className="relative">
                 <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-verdeoscuro text-blanco">
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-bordoclaro text-verde">
                     <Globe className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-verde">Alcance Global</p>
@@ -114,7 +114,7 @@ export default function Objetivos() {
             <dl className="mt-10 space-y-10">
               <div className="relative">
                 <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-verdeoscuro text-blanco">
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-bordoclaro text-verde">
                     <Target className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-verde">Innovación Constante</p>

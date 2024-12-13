@@ -22,7 +22,7 @@ const teamMembers = [
   {
     name: "Omar Marcelo Belloni",
     title: "Ingeniero en Sistemas de Información",
-    image: "/omarbelloni.jpg",
+    image: "/omarbelloni2.png",
     description:
       "Ingeniero en Sistemas de Información con una sólida trayectoria en la gestión integral de servicios de TI. Especializado en alinear tecnología, operaciones y negocio para impulsar la innovación y la eficiencia.",
     achievements: [
@@ -38,7 +38,7 @@ const teamMembers = [
 
 export default function Nosotros() {
   return (
-    <section id="nosotros" className="py-24 bg-verdeoscuro text-blanco">
+    <section id="nosotros" className="py-24 bg-bordoclaro text-blanco">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-extrabold text-blanco sm:text-4xl">
@@ -54,7 +54,7 @@ export default function Nosotros() {
           {teamMembers.map((member, index) => (
             <Card
               key={member.name}
-              className="bg-negro text-blanco overflow-hidden"
+              className="bg-bordofondo text-blanco overflow-hidden"
             >
               <CardContent className="p-0">
                 <div
@@ -89,7 +89,7 @@ export default function Nosotros() {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-[#0e76a8] to-[#005582] text-white font-medium rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
+                      className="inline-flex items-center justify-center px-4 py-2 bg-bordoclaro text-white font-medium rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
                     >
                       <Linkedin className="w-5 h-5 mr-2 text-white" />
                       Ver perfil de LinkedIn
@@ -101,7 +101,7 @@ export default function Nosotros() {
           ))}
         </div>
 
-        <div className="mt-20 bg-negro rounded-lg p-8 shadow-lg">
+        <div className="mt-20 bg-bordofondo rounded-lg p-8 shadow-lg">
           <h3 className="text-2xl font-bold text-verde mb-4">
             ¿Por qué elegir nuestro equipo?
           </h3>
@@ -125,8 +125,7 @@ export default function Nosotros() {
                   Formación Académica
                 </h4>
                 <p>
-                  Nuestro equipo cuenta con múltiples maestrías y estudios de
-                  postgrado en áreas relevantes.
+                  Nuestro equipo está altamente calificado, especializado con estudios de posgrado en áreas claves, permitiendo un enfoque integrado y de excelencia en cada proyecto.
                 </p>
               </div>
             </div>

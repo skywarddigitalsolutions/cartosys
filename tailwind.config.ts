@@ -10,10 +10,11 @@ export default {
   theme: {
   	extend: {
   		colors: {
-  			verde: '#6C9A8B',
-  			verdeoscuro: '#4A7856',
-  			bordo: '#7a3c3b',
-  			negro: '#272727',
+  			verde: '#6D8373', /*verde*/
+  			bordoclaro: '#703e3f',  /*bordo violeta de los cuadrados de servicios*/
+  			bordo: '#7a3c3b', /*bordo detalles minimos*/
+  			bordofondo: '#5A2B2B',
+			negro: "#272727", /*fondo de la pagina*/
   			blanco: '#f1f1f1',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
