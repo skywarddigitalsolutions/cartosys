@@ -102,7 +102,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={isSubmitting}>
+        <Button type="submit" className='bg-verde' disabled={isSubmitting}>
           {isSubmitting ? "Enviando..." : "Enviar mensaje"}
         </Button>
         {submitStatus === 'success' && (
