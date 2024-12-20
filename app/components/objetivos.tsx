@@ -47,7 +47,7 @@ export default function   Objetivos() {
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-bordoclaro text-verde">
                     <feature.icon className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-verde">{feature.name}</p>
+                  <p className="ml-16 text-lg leading-6 font-extrabold text-verde">{feature.name}</p>
                 </dt>
                 <dd className="mt-2 ml-16 text-base text-blanco">{feature.description}</dd>
               </div>
@@ -71,7 +71,7 @@ export default function   Objetivos() {
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-bordoclaro text-verde">
                     <Globe className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-verde">Alcance Global</p>
+                  <p className="ml-16 text-lg leading-6 font-extrabold text-verde">Alcance Global</p>
                 </dt>
                 <dd className="mt-2 ml-16 text-base text-blanco">
                   Nuestras soluciones se adaptan a proyectos de cualquier escala, desde pequeñas localidades hasta grandes urbes.
@@ -117,7 +117,7 @@ export default function   Objetivos() {
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-bordoclaro text-verde">
                     <Target className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-verde">Innovación Constante</p>
+                  <p className="ml-16 text-lg leading-6 font-extrabold text-verde">Innovación Constante</p>
                 </dt>
                 <dd className="mt-2 ml-16 text-base text-blanco">
                   Nos mantenemos a la vanguardia de las tecnologías geoespaciales para ofrecer soluciones innovadoras y eficientes.

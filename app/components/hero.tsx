@@ -20,7 +20,7 @@ export default function Hero() {
             <div className="text-center">
               <h1 className="text-4xl tracking-tight font-extrabold text-blanco sm:text-5xl md:text-6xl">
                 <span className="block">Cartografía precisa para</span>
-                <span className="block text-verde mt-2">ciudades inteligentes</span>
+                <span className="block text-verde mt-2">localidades inteligentes</span>
               </h1>
               <div className="w-20 h-1 bg-verde my-4 mx-auto"></div>
               <p className="mt-3 text-base text-blanco sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">

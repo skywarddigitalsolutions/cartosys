@@ -11,10 +11,11 @@ export default {
   	extend: {
   		colors: {
   			verde: '#6D8373', /*verde*/
-  			bordoclaro: '#703e3f',  /*bordo violeta de los cuadrados de servicios*/
+			verdeoscuro: '#4e6a61', /*verde oscuro*/
+			bordoclaro: '#703e3f',  /*bordo violeta de los cuadrados de servicios*/
   			bordo: '#7a3c3b', /*bordo detalles minimos*/
-  			bordofondo: '#5A2B2B',
-			negro: "#272727", /*fondo de la pagina*/
+  			bordofondo: '#5A2B2B', /* bordo fondo */
+			negro: "#272727", 
   			blanco: '#f1f1f1',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

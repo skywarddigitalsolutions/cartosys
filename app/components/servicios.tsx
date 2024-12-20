@@ -63,7 +63,7 @@ const services = [
   }
 ]
 
-export default function Servicios() {
+export default function   Servicios() {
   return (
     <section className="py-16 bg-bordofondo text-blanco" id="servicios">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,7 +79,7 @@ export default function Servicios() {
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <div key={index} className="bg-bordoclaro hover:bg-verde rounded-lg shadow-lg p-6 transition-transform duration-300 hover:scale-105">
+            <div key={index} className="bg-bordoclaro hover:bg-verde rounded-xl shadow-lg p-6 transition-transform duration-300 hover:scale-105">
               <div className="flex items-center justify-center w-16 h-16 mx-auto bg-bordofondo rounded-full">
                 {service.icon}
               </div>
