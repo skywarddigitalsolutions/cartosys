@@ -16,14 +16,13 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoaded(true);
-    }, 2000); // Adjust the loader duration as needed (2000ms = 2 seconds)
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []);
 
-  if (!loaded) {
-    return <Loader />; // Show loader when not loaded
-  }
+  if (!loaded) return <Loader />;
+  
 
   return (
     <>
