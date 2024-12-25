@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
@@ -55,23 +55,24 @@ export default function Nosotros() {
   return (
     <section id="nosotros" className="py-16 bg-bordofondo text-blanco">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold text-blanco sm:text-4xl">
-            Nuestro Equipo
-          </h2>
-          <p className="mt-4 text-lg max-w-2xl mx-auto">
-            Conoce a los expertos detrás de CartoSYS.
+        <div className="lg:text-center mb-16">
+          <h2 className="text-base text-verde font-semibold tracking-wide uppercase">Nuestro equipo </h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-blanco sm:text-4xl">
+            Conocé los expertos detrás de CartoSYS
+          </p>
+          <p className="mt-4 max-w-2xl text-xl text-blanco lg:mx-auto">
+            Un equipo apasionado, comprometidos con ofrecer soluciones innovadoras en cartografía y gestión territorial.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center lg:flex lg:space-x-8 lg:items-center">
           {teamMembers.map((member) => (
             <div
               key={member.name}
-              className="bg-bordoclaro rounded-lg shadow-lg max-w-sm overflow-hidden cursor-pointer"
+              className="bg-bordoclaro rounded-lg shadow-lg max-w-sm overflow-hidden cursor-pointer lg:flex lg:flex-row lg:max-w-4xl"
               onClick={() => openModal(member)}
             >
-              <div className="relative w-full h-96">
+              <div className="relative w-full h-96 lg:w-1/2 lg:h-auto">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -80,7 +81,7 @@ export default function Nosotros() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-6 flex items-center justify-between">
+              <div className="p-6 flex flex-col justify-between lg:w-1/2 lg:p-8">
                 <div>
                   <h3 className="text-xl font-bold text-verde mb-1">
                     {member.name}
@@ -89,10 +90,12 @@ export default function Nosotros() {
                     {member.title}
                   </p>
                 </div>
-                <div
-                  className="cursor-pointer bg-verde text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-verdeoscuro transition"
-                >
-                  <ArrowRight className="w-6 h-6" />
+                <div className="mt-4 flex">
+                  <div
+                    className="cursor-pointer bg-verde text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-verdeoscuro transition"
+                  >
+                    <ArrowRight className="w-6 h-6" />
+                  </div>
                 </div>
               </div>
             </div>

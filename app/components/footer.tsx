@@ -1,7 +1,8 @@
 import Link from 'next/link'
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin } from 'lucide-react'
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, MessageCircleMore } from 'lucide-react'
+import {FaWhatsapp} from "react-icons/fa"
 
-export default function Footer() {
+export default function   Footer() {
   return (
     <footer className="bg-bordofondo text-blanco">
       <div className='w-[90%] border-t-8 flex justify-self-center border-verde '></div>
@@ -17,12 +18,12 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-blanco hover:text-verde">
-                <span className="sr-only">Facebook</span>
-                <Facebook className="h-6 w-6" />
+                <span className="sr-only">Whatsapp</span>
+                <FaWhatsapp className="h-6 w-6" />
               </a>
               <a href="#" className="text-blanco hover:text-verde">
-                <span className="sr-only">Twitter</span>
-                <Twitter className="h-6 w-6" />
+                <span className="sr-only">Facebook</span>
+                <Facebook className="h-6 w-6" />
               </a>
               <a href="#" className="text-blanco hover:text-verde">
                 <span className="sr-only">LinkedIn</span>

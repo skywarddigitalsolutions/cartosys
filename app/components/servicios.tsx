@@ -62,20 +62,18 @@ const services = [
     description: "Clasificamos, protegemos y compartimos el capital intelectual de los clientes para su óptimo uso y actualización."
   }
 ]
-
-export default function   Servicios() {
+export default function   Servicios() { 
   return (
     <section className="py-16 bg-bordofondo text-blanco" id="servicios">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-verde sm:text-4xl">
-            ¿Qué hacemos?
-          </h2>
-          <div className="w-20 h-1 bg-verde my-4 mx-auto"></div>
-          <p className="mt-4 max-w-2xl text-xl text-blanco lg:mx-auto">
-            Ofrecemos soluciones integrales en cartografía y sistemas de información geográfica para optimizar la gestión urbana y catastral.
-          </p>
+        <div className="lg:text-center mb-16">
+            <h2 className="text-base text-verde font-semibold tracking-wide uppercase">Nuestros Servicios</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-blanco sm:text-4xl">
+            Servicios personalizados para una gestión territorial más eficiente.
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-blanco lg:mx-auto">Ofrecemos soluciones integrales en cartografía y sistemas de información geográfica para optimizar la gestión urbana y catastral.</p>
         </div>
+      
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
