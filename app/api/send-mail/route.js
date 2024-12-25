@@ -12,25 +12,26 @@ export async function POST(req) {
 
   try {
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
+      host: process.env.SMTP_HOST,
+      port: parseInt(process.env.SMTP_PORT, 10),
       secure: false,
       auth: {
-        user: "matiasroel241201@gmail.com", // Cambia esto por tu correo
-        pass: "abwe vfym wthm ufen", // Cambia esto por tu contraseña de aplicación
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     });
 
     await transporter.sendMail({
-      from: email, // Dirección del remitente
-      to: "matiasroel241201@gmail.com", // Tu correo donde recibirás los mensajes
+      from: email,
+      to: process.env.SMTP_TO,
       subject: `Nuevo mensaje de contacto de ${name}`,
       text: message,
     });
 
-    return new Response(JSON.stringify({ message: "Correo enviado con éxito." }), {
-      status: 200,
-    });
+    return new Response(
+      JSON.stringify({ message: "Correo enviado con éxito." }),
+      { status: 200 }
+    );
   } catch (error) {
     console.error("Error enviando correo:", error);
     return new Response(
