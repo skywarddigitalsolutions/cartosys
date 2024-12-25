@@ -3,8 +3,8 @@ import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-negro text-blanco">
-      <div className='w-[90%] border-t-8 flex justify-self-center border-verdeoscuro '></div>
+    <footer className="bg-bordofondo text-blanco">
+      <div className='w-[90%] border-t-8 flex justify-self-center border-verde '></div>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
@@ -105,9 +105,12 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-verdeoscuro pt-8">
-          <p className="text-base text-blanco xl:text-center">
+        <div className="mt-12 border-t border-bordoclaro pt-8">
+          <p className="text-base text-blanco xl:text-center mb-1">
             &copy; 2024 Cartosys. Todos los derechos reservados.
+          </p>
+          <p className="text-base text-blanco xl:text-center">
+            Hecho por <Link href="https://www.sds.com.ar/" target='_blank' rel='noopener' className='text-verde'> Skyward Digital Solutions </Link>
           </p>
         </div>
       </div>

@@ -1,9 +1,19 @@
+"use client"
 import Image from "next/image";
+import { useState } from "react";
 import Link from "next/link";
-import { Linkedin, MapPin, Book, Award } from "lucide-react";
-import { Card, CardContent } from "./ui/card";
+import { Linkedin, ArrowRight } from "lucide-react";
 
-const teamMembers = [
+interface TeamMember {
+  name: string;
+  title: string;
+  image: string;
+  description: string;
+  achievements: string[];
+  linkedin: string;
+}
+
+const teamMembers: TeamMember[] = [
   {
     name: "Horacio Belloni",
     title: "Agrimensor especializado en SIG",
@@ -22,7 +32,7 @@ const teamMembers = [
   {
     name: "Omar Marcelo Belloni",
     title: "Ingeniero en Sistemas de Información",
-    image: "/omarbelloni.jpg",
+    image: "/omarbelloni2.png",
     description:
       "Ingeniero en Sistemas de Información con una sólida trayectoria en la gestión integral de servicios de TI. Especializado en alinear tecnología, operaciones y negocio para impulsar la innovación y la eficiencia.",
     achievements: [
@@ -37,113 +47,113 @@ const teamMembers = [
 ];
 
 export default function Nosotros() {
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+
+  const openModal = (member: TeamMember) => setSelectedMember(member);
+  const closeModal = () => setSelectedMember(null);
+
   return (
-    <section id="nosotros" className="py-24 bg-verdeoscuro text-blanco">
+    <section id="nosotros" className="py-16 bg-bordofondo text-blanco">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-3xl font-extrabold text-blanco sm:text-4xl">
             Nuestro Equipo
           </h2>
-          <p className="mt-4 text-xl text-blanco max-w-2xl mx-auto">
-            Conoce a los expertos detrás de CartoSYS, líderes en cartografía y
-            sistemas de información geográfica.
+          <p className="mt-4 text-lg max-w-2xl mx-auto">
+            Conoce a los expertos detrás de CartoSYS.
           </p>
         </div>
 
-        <div className="mt-12 space-y-16">
-          {teamMembers.map((member, index) => (
-            <Card
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center">
+          {teamMembers.map((member) => (
+            <div
               key={member.name}
-              className="bg-negro text-blanco overflow-hidden"
+              className="bg-bordoclaro rounded-lg shadow-lg max-w-sm overflow-hidden cursor-pointer"
+              onClick={() => openModal(member)}
             >
-              <CardContent className="p-0">
-                <div
-                  className={`flex flex-col lg:flex-row ${
-                    index % 2 === 0 ? "" : "lg:flex-row-reverse"
-                  }`}
-                >
-                  <div className="lg:w-1/3">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={400}
-                      height={400}
-                      className="w-full h-64 lg:h-full object-cover"
-                    />
-                  </div>
-                  <div className="lg:w-2/3 p-6 lg:p-8">
-                    <h3 className="text-2xl font-bold text-verde mb-2">
-                      {member.name}
-                    </h3>
-                    <p className="text-lg font-semibold mb-4">{member.title}</p>
-                    <p className="mb-4">{member.description}</p>
-                    <h4 className="text-lg font-semibold text-verde mb-2">
-                      Logros destacados:
-                    </h4>
-                    <ul className="list-disc list-inside mb-4 space-y-1">
-                      {member.achievements.map((achievement, index) => (
-                        <li key={index}>{achievement}</li>
-                      ))}
-                    </ul>
-                    <Link
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-[#0e76a8] to-[#005582] text-white font-medium rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
-                    >
-                      <Linkedin className="w-5 h-5 mr-2 text-white" />
-                      Ver perfil de LinkedIn
-                    </Link>
-                  </div>
+              <div className="relative w-full h-96">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={400}
+                  height={480}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-verde mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-base font-medium text-blanco">
+                    {member.title}
+                  </p>
                 </div>
-              </CardContent>
-            </Card>
+                <div
+                  className="cursor-pointer bg-verde text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-verdeoscuro transition"
+                >
+                  <ArrowRight className="w-6 h-6" />
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
-        <div className="mt-20 bg-negro rounded-lg p-8 shadow-lg">
-          <h3 className="text-2xl font-bold text-verde mb-4">
-            ¿Por qué elegir nuestro equipo?
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex items-start">
-              <MapPin className="w-8 h-8 text-verde mr-4 flex-shrink-0" />
-              <div>
-                <h4 className="text-lg font-semibold mb-2">
-                  Experiencia Comprobada
-                </h4>
-                <p>
-                  Años de experiencia en proyectos de cartografía y SIG a nivel
-                  nacional e internacional.
+        {selectedMember && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+            onClick={closeModal}
+          >
+            <div
+              className="bg-bordoclaro text-blanco w-full max-w-5xl lg:flex rounded-lg overflow-hidden relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 text-white text-2xl font-bold z-10"
+              >
+                ✖
+              </button>
+
+              <div className="p-6 lg:p-12 flex-1">
+                <h3 className="text-3xl font-bold text-verde mb-4">
+                  {selectedMember.name}
+                </h3>
+                <p className="text-lg font-semibold mb-4">
+                  {selectedMember.title}
                 </p>
+                <p className="mb-4">{selectedMember.description}</p>
+                <h4 className="text-lg font-semibold text-verde mb-2">
+                  Logros destacados:
+                </h4>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                  {selectedMember.achievements.map((achievement, index) => (
+                    <li key={index}>{achievement}</li>
+                  ))}
+                </ul>
+                <Link
+                  href={selectedMember.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-2 bg-verde text-white font-medium rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
+                >
+                  <Linkedin className="w-5 h-5 mr-2 text-white" />
+                  Ver perfil de LinkedIn
+                </Link>
               </div>
-            </div>
-            <div className="flex items-start">
-              <Book className="w-8 h-8 text-verde mr-4 flex-shrink-0" />
-              <div>
-                <h4 className="text-lg font-semibold mb-2">
-                  Formación Académica
-                </h4>
-                <p>
-                  Nuestro equipo cuenta con múltiples maestrías y estudios de
-                  postgrado en áreas relevantes.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <Award className="w-8 h-8 text-verde mr-4 flex-shrink-0" />
-              <div>
-                <h4 className="text-lg font-semibold mb-2">
-                  Innovación Constante
-                </h4>
-                <p>
-                  Comprometidos con la mejora continua y la aplicación de las
-                  últimas tecnologías en nuestro campo.
-                </p>
+
+              <div className="hidden lg:block lg:w-1/2">
+                <Image
+                  src={selectedMember.image}
+                  alt={selectedMember.name}
+                  width={500}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
