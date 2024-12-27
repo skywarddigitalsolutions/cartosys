@@ -104,7 +104,7 @@ export default function Nosotros() {
 
         {selectedMember && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black bg-opacity-70 px-2 flex items-center justify-center z-50"
             onClick={closeModal}
           >
             <div
@@ -113,7 +113,7 @@ export default function Nosotros() {
             >
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 text-white text-2xl font-bold z-10"
+                className="absolute top-4 right-4 text-white lg:text-bordo text-2xl font-bold z-10"
               >
                 ✖
               </button>
