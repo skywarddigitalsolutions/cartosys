@@ -1,47 +1,53 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { name: 'Inicio', href: '/' },
-  { name: 'Servicios', href: '#servicios' },
-  { name: 'Nosotros', href: '#nosotros' },
-  { name: 'Contacto', href: '#contacto' },
-]
+  { name: "Inicio", href: "/" },
+  { name: "Servicios", href: "#servicios" },
+  { name: "Nosotros", href: "#nosotros" },
+  { name: "Contacto", href: "#contacto" },
+];
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(true)
-const [isOpen, setIsOpen] = useState(false)
-const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [isVisible, setIsVisible] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
-useEffect(() => {
-  const controlNavbar = () => {
-    const currentScrollPos = window.scrollY
-    const isScrollingUp = prevScrollPos > currentScrollPos
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollPos = window.scrollY;
+      const isScrollingUp = prevScrollPos > currentScrollPos;
 
-    setIsVisible(isScrollingUp || currentScrollPos < 10)
-    setPrevScrollPos(currentScrollPos)
-  }
+      setIsVisible(isScrollingUp || currentScrollPos < 10);
+      setPrevScrollPos(currentScrollPos);
+    };
 
-  window.addEventListener('scroll', controlNavbar)
-  return () => window.removeEventListener('scroll', controlNavbar)
-}, [prevScrollPos])
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
+  }, [prevScrollPos]);
 
   return (
-    <nav className={`fixed w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <nav
+      className={`fixed w-full z-50 transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="bg-bordofondo bg-opacity-90 backdrop-blur-md shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
-                <span className="text-verde text-2xl font-bold tracking-wider">CartoSYS</span>
+                <span className="text-verde text-2xl font-bold tracking-wider">
+                  CartoSYS
+                </span>
               </Link>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                {navItems.map((item) => (
+                {navItems.map(item => (
                   <Link
                     key={item.name}
                     href={item.href}
@@ -75,7 +81,7 @@ useEffect(() => {
         {isOpen && (
           <div className="md:hidden" id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <Link
                   key={item.name}
                   href={item.href}
@@ -90,6 +96,5 @@ useEffect(() => {
         )}
       </div>
     </nav>
-  )
+  );
 }
-

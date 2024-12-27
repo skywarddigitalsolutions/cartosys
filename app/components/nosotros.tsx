@@ -66,7 +66,7 @@ export default function Nosotros() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center lg:flex lg:space-x-8 lg:items-center">
-          {teamMembers.map((member) => (
+          {teamMembers.map(member => (
             <div
               key={member.name}
               className="bg-bordoclaro rounded-lg shadow-lg max-w-sm overflow-hidden cursor-pointer lg:flex lg:flex-row lg:max-w-4xl"
@@ -131,7 +131,7 @@ export default function Nosotros() {
                 </h4>
                 <ul className="list-disc list-inside mb-6 space-y-2">
                   {selectedMember.achievements.map((achievement, index) => (
-                    <li key={index}>{achievement}</li>
+                    <li key={Number(index)}>{achievement}</li>
                   ))}
                 </ul>
                 <Link
