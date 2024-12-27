@@ -63,7 +63,7 @@ export default function   Footer() {
                 <ul role="list" className="mt-4 space-y-4">
                    <li>
                     <Link href="#" className="text-base text-blanco hover:text-verde">
-                      Inico
+                      Inicio
                     </Link>
                   </li>
                   <li>

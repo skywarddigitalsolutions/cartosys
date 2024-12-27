@@ -53,44 +53,36 @@ export function ContactForm() {
   };
 
   return (
-    <form
-      action="mailto:cartosys@gmail.com"
-      method="post"
-      encType="text/plain"
-      className="space-y-8"
-    >
-      <div>
-        <label className="block text-sm font-medium text-blanco" htmlFor="name">
-          Nombre
-        </label>
-        <input
-          type="text"
-          id="name"
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <FormField
+          control={form.control}
           name="name"
-          placeholder="Tu nombre"
-          required
-          className="mt-1 block w-full rounded-md border border-blanco bg-transparent p-1  shadow-sm focus:border-verde focus:ring focus:ring-verde focus:ring-opacity-50"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nombre</FormLabel>
+              <FormControl>
+                <Input placeholder="Tu nombre" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      </div>
-      <div>
-        <label className="block text-sm font-medium text-blanco" htmlFor="email">
-          Correo electrónico
-        </label>
-        <input
-          type="email"
-          id="email"
+        <FormField
+          control={form.control}
           name="email"
-          placeholder="tu@email.com"
-          required
-          className="mt-1 block w-full rounded-md border border-blanco bg-transparent p-1 shadow-sm focus:border-verde focus:ring focus:ring-verde focus:ring-opacity-50"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Correo electrónico</FormLabel>
+              <FormControl>
+                <Input placeholder="tu@email.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      </div>
-      <div>
-        <label className="block text-sm font-medium text-blanco" htmlFor="message">
-          Mensaje
-        </label>
-        <textarea
-          id="message"
+        <FormField
+          control={form.control}
           name="message"
           render={({ field }) => (
             <FormItem>

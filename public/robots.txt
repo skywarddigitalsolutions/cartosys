@@ -1,0 +1,15 @@
+# *
+User-agent: *
+Allow: /
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Host
+Host: https://cartosys.com.ar
+
+# Sitemaps
+Sitemap: https://cartosys.com.ar/sitemap.xml
+Sitemap: https://cartosys.com.ar/my-custom-sitemap-1.xml
+Sitemap: https://cartosys.com.ar/my-custom-sitemap-2.xml
