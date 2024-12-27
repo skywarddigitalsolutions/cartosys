@@ -28,9 +28,13 @@ export function Carrousel() {
   return (
     <section className="py-16 bg-bordofondo" id="galeria">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-verde text-center mb-8 sm:text-4xl">
-          Nuestra Galería
-        </h2>
+      <div className="lg:text-center mb-16">
+            <h2 className="text-base text-verde font-semibold tracking-wide uppercase">Nuestra galería </h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-blanco sm:text-4xl">
+            Mapas que transforman territorios
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-blanco lg:mx-auto">Explora algunos de nuestros trabajos más destacados en cartografía, donde plasmamos soluciones precisas para distintas provincias.</p>
+        </div>
         <div className="relative">
           <Carousel className="w-full max-w-4xl mx-auto">
             <CarouselContent>

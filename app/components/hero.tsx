@@ -1,21 +1,25 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import FotoPrueba from "@/public/fotoprueba.webp"
 
 export default function Hero() {
   return (
-    <div className="relative bg-bordofondo pt-12 overflow-hidden">
+  <>
+
+      <div className="relative bg-bordofondo overflow-hidden">
+        {/* Hero Section */}
+      </div>
+    <div className="relative bg-bordofondo overflow-hidden">
       {/* Mobile design */}
       <div className="lg:hidden">
-        <div className="relative py-24">
-          <Image
-            src={FotoPrueba}
-            alt="Mapa de ciudad"
-            layout="fill"
-            objectFit="cover"
-            priority
+        <div className="relative h-screen">
+          <video 
+            className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
+            autoPlay
+            loop
+            muted
+            playsInline
+            src="/cartosys.webm"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-bordofondo via-bordofondo/70 to-bordofondo/30"></div>
+          {/* Filtro de color "bordoclaro" */}
+          <div className="absolute inset-0 bg-bordoclaro opacity-80"></div>
           <div className="relative z-10 pt-12 pb-8 px-4 sm:px-6 flex flex-col justify-center h-full">
             <div className="text-center">
               <h1 className="text-4xl tracking-tight font-extrabold text-blanco sm:text-5xl md:text-6xl">
@@ -28,14 +32,14 @@ export default function Hero() {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center">
                 <div className="rounded-md shadow">
-                  <Link href="#servicios" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blanco bg-bordoclaro hover:bg-verde transition-colors duration-300 md:py-4 md:text-lg md:px-10">
+                  <a href="#servicios" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blanco bg-bordoclaro hover:bg-verde transition-colors duration-300 md:py-4 md:text-lg md:px-10">
                     Nuestros servicios
-                  </Link>
+                  </a>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <Link href="#contacto" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blanco bg-verde hover:bg-bordoclaro transition-colors duration-300 md:py-4 md:text-lg md:px-10">
+                  <a href="#contacto" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blanco bg-verde hover:bg-bordoclaro transition-colors duration-300 md:py-4 md:text-lg md:px-10">
                     Contáctanos
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -43,7 +47,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Desktop design (unchanged) */}
+      {/* Desktop design */}
       <div className="hidden lg:block">
         <div className="max-w-7xl mx-auto">
           <div className="relative z-10 pb-8 bg-bordofondo sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
@@ -69,14 +73,14 @@ export default function Hero() {
                 </p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
-                    <Link href="#servicios" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blanco bg-bordoclaro hover:bg-verde transition-colors duration-300 md:py-4 md:text-lg md:px-10">
+                    <a href="#servicios" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blanco bg-bordoclaro hover:bg-verde transition-colors duration-300 md:py-4 md:text-lg md:px-10">
                       Nuestros servicios
-                    </Link>
+                    </a>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <Link href="#contacto" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blanco bg-verde hover:bg-bordoclaro transition-colors duration-300 md:py-4 md:text-lg md:px-10">
+                    <a href="#contacto" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blanco bg-verde hover:bg-bordoclaro transition-colors duration-300 md:py-4 md:text-lg md:px-10">
                       Contáctanos
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -84,17 +88,19 @@ export default function Hero() {
           </div>
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <Image
-            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src={FotoPrueba}
-            alt="Mapa de ciudad"
-            width={800}
-            height={600}
-            priority
+          <video 
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            src="./cartosys.webm"
           />
+          <div className="absolute inset-0 bg-bordoclaro opacity-20"></div>
+
         </div>
       </div>
     </div>
-  )
+ </>
+  );
 }
-
