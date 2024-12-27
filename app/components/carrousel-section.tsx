@@ -12,11 +12,16 @@ import {
 } from "./ui/carousel"
 
 const images = [
-  { src: "/omarbelloni2.png", alt: "Imagen 1" },
-  { src: "/omarbelloni2.png", alt: "Imagen 2" },
-  { src: "/omarbelloni2.png", alt: "Imagen 3" },
-  { src: "/omarbelloni2.png", alt: "Imagen 4" },
-  { src: "/omarbelloni2.png", alt: "Imagen 5" },
+  { src: "/cataratas3.webp", alt: "Cataratas del iguazu" },
+  { src: "/cataratas4.webp", alt: "Cataratas del iguazu" },
+  { src: "/cordoba1.webp", alt: "Cordoba" },
+  { src: "/itaipu_desde_el_espacio.webp", alt: "Itaipu" },
+  { src: "/itaipu3.webp", alt: "Itaipu" },
+  { src: "/mendoza.webp", alt: "Mendoza" },
+  { src: "/san_fernando_del_valle_de_catamarca.webp", alt: "San Fernando del valle de Catamarca" },
+  { src: "/santa_rosa_la_pampa.webp", alt: "Santa rosa la pampa" },
+  { src: "/santiago_del_estero.webp", alt: "Santiago del estero" },
+  { src: "/triple_Frontera2.webp", alt: "Triple frontera" },
 ]
 
 export function Carrousel() {
